@@ -841,7 +841,7 @@ class CoqtailServer(object):
         """Start the TCP server."""
         # N.B. port = 0 chooses any arbitrary open one
         CoqtailHandler.sync = sync
-        CoqtailServer.serv = ThreadingTCPServer(("localhost", 0), CoqtailHandler)
+        CoqtailServer.serv = ThreadingTCPServer(("127.0.0.1", 0), CoqtailHandler)
         CoqtailServer.serv.daemon_threads = True
         _, port = CoqtailServer.serv.server_address
 
